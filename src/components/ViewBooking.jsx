@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 function ViewBooking() {
     const [bookings, setBookings] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [updatingId, setUpdatingId] = useState(null);
 
     useEffect(() => {
         const fetchBookings = async () => {
