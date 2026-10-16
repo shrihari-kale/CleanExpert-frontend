@@ -24,7 +24,7 @@ const Footer = () => {
           {/* col-2 */}
           <div className="col-12 col-md-3 d-flex flex-column align-items-center">
             <h4>Quick Links</h4>
-            <a href="#">Home</a>
+            <a href="#Section1/About.jsx">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Pricing</a>

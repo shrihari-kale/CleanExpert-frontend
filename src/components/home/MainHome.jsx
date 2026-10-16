@@ -19,8 +19,8 @@ const MainHome = () => {
       <Section4 />
       <Section5 />
       <ContactPage/>
-      <NewsLetter/>
-      <Footer/>
+      <NewsLetter/> 
+      <Footer/> 
     </div>
   );
 }

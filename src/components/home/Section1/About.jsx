@@ -76,12 +76,12 @@ function About() {
           </div>
         </div>
       </div>
-      <div className="row text-center about-bg-text">
-        <div className="col-md-4 col-12">VACCUME</div>
+      <div className="about-bg-text">
+        <div>VACCUME</div>
 
-        <div className="col-md-4 col-12">CLEANING</div>
+        <div>CLEANING</div>
 
-        <div className="col-md-4 col-12">SWEEPING</div>
+        <div>SWEEPING</div>
       </div>
     </section>
   );

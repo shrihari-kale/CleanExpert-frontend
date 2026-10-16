@@ -33,26 +33,25 @@ const data = [
   },
 ];
 
-
 function ServiceCard() {
-    return (
-      <div className="container py-5">
-        <div className="d-flex gap-4 overflow-auto service-container">
-          {data.map((item, index) => (
-            <div className="service-card" key={index}>
-              <div className="img-box">
-                <img src={item.img} alt="" />
-                <div className="icon">→</div>
-              </div>
-              <div className="p-3">
-                <h5>{item.title}</h5>
-                <hr></hr>
-                <p>{item.desc}</p>
-              </div>
+  return (
+    <div className="container py-5">
+      <div className="d-flex gap-4 overflow-auto service-container">
+        {data.map((item, index) => (
+          <div className="service-card" key={index}>
+            <div className="img-box">
+              <img src={item.img} alt="" />
+              <div className="icon">→</div>
             </div>
-          ))}
-        </div>
+            <div className="p-3">
+              <h5>{item.title}</h5>
+              <hr></hr>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
-    );
+    </div>
+  );
 }
 export default ServiceCard;

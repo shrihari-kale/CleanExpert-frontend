@@ -10,7 +10,7 @@ html {
 }
 
 .hero {
-  height: 98vh;
+  height: 100vh;
   /* background: url("https://i.pinimg.com/736x/1c/02/ee/1c02ee13e6ae3a66ded224ee70388af9.jpg") */
   background:url(assets/cleanigheroimg.png) 
   no-repeat center/cover;
@@ -51,9 +51,12 @@ html {
   font-style: normal;
 }
 .navbar .navbar-brand {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
-.why {
+
+/* about page css */
+
+ .why {
   padding: 80px 0;
   /* background: #f8f9fa; */
 }
@@ -99,6 +102,7 @@ html {
   gap: 20px;
 }
 
+
 .right img {
   width: 48%;
   border-radius: 15px;
@@ -111,7 +115,11 @@ html {
   font-size: 4rem;
   opacity: 0.3;
   color: gray;
+  display: flex;
+  gap: 6%;
+  justify-content: center;
 }
+
 
 /* card css */
 .service-container::-webkit-scrollbar {
@@ -425,6 +433,12 @@ textarea {
     font-size: 75px;
     bottom: 5px;
   }
+  .about-bg-text {
+  display: flex;
+ flex-direction: column;
+ margin-top: 10%;
+ align-items: center;
+}
 }
 
 .section3-img img {

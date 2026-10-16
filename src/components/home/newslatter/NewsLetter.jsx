@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const NewsLetter = () => {
   return (
@@ -33,5 +33,4 @@ export const NewsLetter = () => {
       <hr></hr>
     </div>
   );
-}
-
+};
