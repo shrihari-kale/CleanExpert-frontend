@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate} from "react-router-dom";
+// import ServicesCard from '../ServicesCard'
+
 
 function Hero() {
+  const navigate = useNavigate();
+
      return (
        <div className="hero">
          <div className="container text-white hero-img">
@@ -16,6 +21,7 @@ function Hero() {
            <button
              className="btn btn-primary mt-3"
              style={{ width: "10%", marginLeft: "30px" }}
+             onClick={() => navigate("/servicescard")}
            >
              Our Services
            </button>
