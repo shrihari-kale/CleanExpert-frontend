@@ -186,12 +186,13 @@ html {
   background: #f8f9fa;
 }
 
-.section-4 {
-  padding: rem;
+.steps {
+  margin-top: 10%;
 }
 
 .section5 {
   margin-left: 3rem;
+  padding: 5px;
 }
 
 .bi {

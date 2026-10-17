@@ -11,7 +11,7 @@ function About() {
       </div>
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="main-title">
+          <h2 className="main-title backgraund p-4">
             Why Should{" "}
             <span>
               You <br />

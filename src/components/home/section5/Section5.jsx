@@ -19,7 +19,7 @@ function Section5() {
             <small className="fw-bold text-uppercase">Why choosing us</small>
           </div>
 
-          <h6 className="main-title mb-3 section5 mt-5">
+          <h6 className="main-title mb-3 section5 mt-5 backgraund p-4">
             We Make
             <span>
               {" "}

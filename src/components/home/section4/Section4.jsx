@@ -1,5 +1,4 @@
 import React from "react";
-import Sect4Card from "./Steps";
 import Steps from "./Steps";
 
 function Section4() {
@@ -11,7 +10,7 @@ function Section4() {
         </div>
         <small className="fw-bold text-uppercase">how it work</small>
       </div>
-      <h1 className="main-title mb-3">
+      <h1 className="main-title mb-3 backgraund p-4">
         Get Cleaner{" "}
         <span>
           Space In
@@ -20,7 +19,7 @@ function Section4() {
         Steps
       </h1>
 
-      <div>
+      <div className="steps">
         <Steps />
       </div>
     </div>

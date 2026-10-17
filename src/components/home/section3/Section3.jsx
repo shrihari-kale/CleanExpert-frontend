@@ -11,7 +11,7 @@ function Section3() {
             </div>
             <small className="fw-bold text-uppercase ">What you do</small>
           </div>
-          <h1 className="main-title mt-5 mb-3">
+          <h1 className="main-title mt-5 mb-3 backgraund p-4">
             Behind
             <span>
               {" "}

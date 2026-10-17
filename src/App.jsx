@@ -10,6 +10,7 @@ import BookingForm from "./components/BookingForm";
 import ViewBooking from "./components/ViewBooking";
 import PaymentPage from "./components/PaymentPage";
 import ServicesCard from "./components/services/ServicesCard";
+import Login from "./components/pages/Login";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/bookings" element={<ViewBooking/>}/>
         <Route path="/payment" element={<PaymentPage/>}/>
         <Route path="/servicescard" element={<ServicesCard/>}/>
+        <Route path="login" element={<Login/>}/>
       </Routes>
 
       {/* <Footer/> */}

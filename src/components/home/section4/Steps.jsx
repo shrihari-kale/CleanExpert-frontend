@@ -36,9 +36,9 @@ function Steps() {
             <div
               key={step.id}
               className={`row step align-items-center ${
-                index % 2 !== 0 ? "justify-content-end" : "left"
-              }`}
-            >
+                index % 2 !== 0 ? "justify-content-end right" : "left"
+              }`}>
+
               <div className="col-md-6 content">
                 <div className="card shadow border-0 rounded-4 overflow-hidden">
                   <img
