@@ -1,10 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../../Navbar";
 
 function Hero() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <Navbar/>
     <section className="hero">
       <div className="hero-overlay">
         <div className="container hero-content">
@@ -47,6 +50,7 @@ function Hero() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 

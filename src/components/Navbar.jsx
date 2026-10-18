@@ -1,10 +1,29 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { useEffect,useState } from "react";
+import { use } from "react";
 
 function Navbar() {
+ 
+   const isHome = location.pathname === "/"
+   const [scrolled, setScrolled] = useState(false);
+  
+
+   useEffect(()=> {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll",handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+   },[]);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark fixed-top w-100">
+    <nav className={`navbar navbar-expand-lg navbar-dark fixed-top w-100 ${
+      isHome?scrolled?"bg-dark shadow":"":"bg-dark shadow"
+     }`}>
       <div className="container">
         <Link
           className="navbar-brand fw-bold"

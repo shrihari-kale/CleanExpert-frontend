@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 function ViewBooking() {
     const [bookings, setBookings] = useState([]);
@@ -25,8 +26,10 @@ function ViewBooking() {
     },[]);
 
     return (
-      <div>
-        <h2>Customer Bookings</h2>
+      <>
+      <Navbar/>
+      <div className="container mybooking">
+        <h2 className="">Customer Bookings</h2>
         <p>Total Bookings:{bookings.length}</p>
 
         <table boder="1" cellPadding="10">
@@ -57,6 +60,7 @@ function ViewBooking() {
           </tbody>
         </table>
       </div>
+      </>
     );
 }
 

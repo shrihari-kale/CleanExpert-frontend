@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 function Review() {
   const [task, setTask] = useState([]);
@@ -67,78 +68,100 @@ function Review() {
 
   return (
     <>
-      <div className="container-fluid  min-vh-100 py-5">
-        <div className="container p-5">
-          {/* Form */}
-          <form onSubmit={handlesubmit}>
-            <div className="card p-4 shadow-lg border-0">
-              <h1 className="fw-bold mb-4 text-center">Customer Review</h1>
+      <Navbar />
+      <main className="review-page">
+        <section className="review-hero">
+          <div className="container text-center">
+            <span className="review-eyebrow">
+              <i className="bi bi-stars"></i> CUSTOMER EXPERIENCES
+            </span>
 
-              <input
-                type="text"
-                placeholder="Enter Customer Name"
-                className="form-control mb-3"
-                value={reviewData.name}
-                onChange={(e) =>
-                  setReviewData({ ...reviewData, name: e.target.value })
-                }
-              />
+            <h1>
+              Your Feedback, <span>Our Motivation.</span>
+            </h1>
 
-              <textarea
-                placeholder="Write Review"
-                className="form-control mb-3"
-                rows="4"
-                value={reviewData.writeReview}
-                onChange={(e) =>
-                  setReviewData({ ...reviewData, writeReview: e.target.value })
-                }
-              ></textarea>
+            <p>
+              Share your experience with CleanExpert and help us improve our
+              cleaning services.
+            </p>
+          </div>
+        </section>
+        <div className="container-fluid  min-vh-100 py-5">
+          <div className="container p-5">
+            {/* Form */}
+            <form onSubmit={handlesubmit}>
+              <div className="card p-4 shadow-lg border-0">
+                <h1 className="fw-bold mb-4 text-center">Customer Review</h1>
 
-              <button className="btn btn-primary" type="submit">
-                Add Review
-              </button>
-            </div>
-          </form>
+                <input
+                  type="text"
+                  placeholder="Enter Customer Name"
+                  className="form-control mb-3"
+                  value={reviewData.name}
+                  onChange={(e) =>
+                    setReviewData({ ...reviewData, name: e.target.value })
+                  }
+                />
 
-          {/* Review Section */}
-          <div className="mt-5">
-            <h2 className="fw-bold mb-4">
-              Customer Reviews <span>Total Review:{reviews.length}</span>
-            </h2>
+                <textarea
+                  placeholder="Write Review"
+                  className="form-control mb-3"
+                  rows="4"
+                  value={reviewData.writeReview}
+                  onChange={(e) =>
+                    setReviewData({
+                      ...reviewData,
+                      writeReview: e.target.value,
+                    })
+                  }
+                ></textarea>
 
-            <div className="row g-4">
-              {reviews.map((elem, idx) => {
-                return (
-                  <div key={idx} className="col-md-4">
-                    <div className="card shadow-lg border-0 h-100">
-                      <div className="card-body position-relative">
-                        <span
-                          onClick={() => {
-                            deleteReview(idx);
-                          }}
-                          className="position-absolute top-0 end-0 m-3 fw-bold fs-5"
-                          style={{ cursor: "pointer" }}
-                        >
-                          {/* × */}
-                        </span>
+                <button className="btn btn-primary" type="submit">
+                  Add Review
+                </button>
+              </div>
+            </form>
 
-                        <h4 className="fw-bold">{elem.name}</h4>
+            {/* Review Section */}
+            <div className="mt-5">
+              <h2 className="fw-bold mb-4">
+                Customer Reviews <span>Total Review:{reviews.length}</span>
+              </h2>
 
-                        <p className="text-secondary mt-3">
-                          {elem.writeReview}
-                        </p>
+              <div className="row g-4">
+                {reviews.map((elem, idx) => {
+                  return (
+                    <div key={idx} className="col-md-4">
+                      <div className="card shadow-lg border-0 h-100">
+                        <div className="card-body position-relative">
+                          <span
+                            onClick={() => {
+                              deleteReview(idx);
+                            }}
+                            className="position-absolute top-0 end-0 m-3 fw-bold fs-5"
+                            style={{ cursor: "pointer" }}
+                          >
+                            {/* × */}
+                          </span>
 
-                        <h5 className="text-warning">⭐⭐⭐⭐⭐</h5>
+                          <h4 className="fw-bold">{elem.name}</h4>
+
+                          <p className="text-secondary mt-3">
+                            {elem.writeReview}
+                          </p>
+
+                          <h5 className="text-warning">⭐⭐⭐⭐⭐</h5>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
+      </main>
     </>
   );
 }

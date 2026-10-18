@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "../Footer";
+import Navbar from "../Navbar";
 
 function ContactPage() {
     return (
       <>
+      <Navbar/>
       <div className="container mt-5 p-5">
 
           <div className="row">

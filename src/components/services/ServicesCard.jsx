@@ -1,10 +1,12 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 import home from "../../assets/homecleaning.png";
 import office from "../../assets/officecleaning.png";
 import deep from "../../assets/deepcleaning.png";
+import tank from "../../assets/watertank.png";
 
 const services = [
   {
@@ -30,8 +32,7 @@ const services = [
   },
   {
     title: "Water Tank Cleaning",
-    image:
-      "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=80",
+    image: tank,
     desc: "Cleaning services to help maintain a cleaner water storage tank.",
     price: 699,
     icon: "bi-droplet",
@@ -58,6 +59,8 @@ function ServicesCard() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <Navbar/>
     <section className="services-catalog-section">
       <div className="container py-5">
         <div className="services-catalog-heading text-center mt-5">
@@ -90,9 +93,7 @@ function ServicesCard() {
                     loading="lazy"
                   />
 
-                  <span className="catalog-service-icon">
-                    <i className={`bi ${service.icon}`}></i>
-                  </span>
+                  
                 </div>
 
                 <div className="catalog-service-body">
@@ -128,6 +129,7 @@ function ServicesCard() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
