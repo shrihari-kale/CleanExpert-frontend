@@ -3,18 +3,29 @@ import ServiceCard from "./ServiceCard";
 
 function Service() {
   return (
-    <div className="container backgraund">
-      <div className="">
-        <h1 className="main-title p-5">
-          Our Company
-          <span>
-            {" "}
-            Provide The <br></br>Best
-          </span>{" "}
-          Cleaning Service
-        </h1>
+    <section className="services py-5">
+      <div className="container">
+        <div className="services-heading text-center">
+          <span className="services-label">
+            <i className="bi bi-stars"></i> OUR SERVICES
+          </span>
+
+          <h2 className="services-title mt-3">
+            Professional Cleaning
+            <br />
+            <span>For Every Space</span>
+          </h2>
+
+          <p className="services-description">
+            From everyday home cleaning to specialized cleaning solutions,
+            find the right service for your space.
+          </p>
+        </div>
+
+        {/* <ServiceCard /> */}
       </div>
-    </div>
+    </section>
   );
 }
+
 export default Service;

@@ -2,50 +2,76 @@ import React from "react";
 
 function Section3() {
   return (
-    <div className="container p-5 mt-4">
-      <div className="row">
-        <div className="col-sm-5 col-md-6 mt-5">
-          <div className="d-flex align-items-center gap-2">
-            <div>
-              <i className="bi bi-star"></i>
+    <section className="section3-wrapper">
+      <div className="container py-5">
+        <div className="row align-items-center g-5">
+          {/* Left Content */}
+          <div className="col-lg-6">
+            <div className="section3-label">
+              <i className="bi bi-stars"></i>
+              <span>WHY CLEANEXPERT</span>
             </div>
-            <small className="fw-bold text-uppercase ">What you do</small>
-          </div>
-          <h1 className="main-title mt-5 mb-3 backgraund p-4">
-            Behind
-            <span>
-              {" "}
-              The Home <br></br>Master
-            </span>{" "}
-            Company <br></br>
-            Stories.
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            <br></br> officia iste non distinctio facilis itaque voluptate nemo
-            veniam labore voluptas dolores odio{" "}
-          </p>
 
-          <div className="flex">
-            <div>
-              <h1>269+</h1>
-              <p>Active Clients</p>
-            </div>
-            <div>
-              <h1>386+</h1>
-              <p>Glorious Years</p>
+            <h2 className="section3-heading">
+              Clean Spaces.
+              <br />
+              <span>Comfortable Living.</span>
+            </h2>
+
+            <p className="section3-description">
+              A clean space makes everyday life more comfortable. CleanExpert
+              offers a range of cleaning services for homes, offices,
+              bathrooms, water tanks, and gardens. Choose a service that
+              suits your needs and book at your convenience.
+            </p>
+
+            <div className="section3-benefits">
+              <div className="section3-benefit">
+                <i className="bi bi-check-circle-fill"></i>
+                <div>
+                  <h5>Services for Different Spaces</h5>
+                  <p>Cleaning options for homes, workplaces, and more.</p>
+                </div>
+              </div>
+
+              <div className="section3-benefit">
+                <i className="bi bi-calendar-check-fill"></i>
+                <div>
+                  <h5>Convenient Booking</h5>
+                  <p>Select your service and preferred booking schedule.</p>
+                </div>
+              </div>
+
+              <div className="section3-benefit">
+                <i className="bi bi-house-heart-fill"></i>
+                <div>
+                  <h5>A Fresher Environment</h5>
+                  <p>Make cleanliness part of your everyday routine.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className=" col-md-6 p-5 section3-img">
-          <img
-            src="https://i.pinimg.com/736x/45/59/d5/4559d565d473a92ee5bb2ce9096d065d.jpg"
-            className="img-fluid rounded-4"
-          />
+          {/* Right Image */}
+          <div className="col-lg-6">
+            <div className="section3-image-wrapper">
+              <img
+                src="https://images.pexels.com/photos/4108710/pexels-photo-4108710.jpeg"
+                alt="Cleaning professional working indoors"
+                className="section3-image"
+                loading="lazy"
+              />
+
+              <div className="section3-image-note">
+                <i className="bi bi-stars"></i>
+                <span>Make room for a cleaner everyday.</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
+
 export default Section3;

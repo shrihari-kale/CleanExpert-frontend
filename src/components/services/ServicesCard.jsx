@@ -1,86 +1,135 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 import home from "../../assets/homecleaning.png";
 import office from "../../assets/officecleaning.png";
 import deep from "../../assets/deepcleaning.png";
 
-
 const services = [
-  { title: "Home Cleaning",
+  {
+    title: "Home Cleaning",
     image: home,
-    desc: "Complete home cleaning service.",
-    price:999,
-   },
-
-  { title: "Office Cleaning", 
-    image: office, 
-    desc: "Professional office cleaning.",
-    price:1499,
-   },
-
-  { title: "Deep Cleaning", 
-    image: deep, 
-    desc: "Detailed deep cleaning.",
-    price: 1900
+    desc: "Complete home cleaning to keep your living space fresh and comfortable.",
+    price: 999,
+    icon: "bi-house-door",
   },
-   {
-    title: "Water Tank Cleaning", 
-    image: "https://media.istockphoto.com/id/2150787685/photo/rooftop-view-of-overhead-water-tank-and-metal-staircase-in-dehradun-india.jpg?s=1024x1024&w=is&k=20&c=H9DLjtHHhkQ_kSYxC2WAKTwl9PKFXsQMwXniT9lUoPw=", 
-    desc: "Keep clean.",
-    price:699
-   },
-
-  { title: "Bathroom Cleaning", 
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a", 
-    desc: "Sanitized and germ-free bathroom cleaning.",
-    price:499
+  {
+    title: "Office Cleaning",
+    image: office,
+    desc: "Keep your workspace neat, clean, and ready for productive work.",
+    price: 1499,
+    icon: "bi-building",
   },
-
-  { title: "Garden Cleaning", 
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b", 
-    desc: "Beautiful and clean garden maintenance.",
-    price:699
-   },
+  {
+    title: "Deep Cleaning",
+    image: deep,
+    desc: "Detailed cleaning for areas that need extra attention.",
+    price: 1900,
+    icon: "bi-stars",
+  },
+  {
+    title: "Water Tank Cleaning",
+    image:
+      "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=900&q=80",
+    desc: "Cleaning services to help maintain a cleaner water storage tank.",
+    price: 699,
+    icon: "bi-droplet",
+  },
+  {
+    title: "Bathroom Cleaning",
+    image:
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=900&q=80",
+    desc: "Give your bathroom a fresh look with detailed cleaning.",
+    price: 499,
+    icon: "bi-water",
+  },
+  {
+    title: "Garden Cleaning",
+    image:
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=900&q=80",
+    desc: "Keep your garden tidy, organized, and enjoyable.",
+    price: 699,
+    icon: "bi-flower1",
+  },
 ];
 
-const ServicesCard = () => {
+function ServicesCard() {
   const navigate = useNavigate();
 
   return (
-    <div className="container p-5">
-      <h1 className="mt-5 p-5 text-center">Our Services</h1>
-      <div className="row">
-        {services.map((service, index) => (
-          <div className="col-md-4 mb-4" key={index}>
-            <div className="card shadow h-100">
-              <img
-                src={service.image}
-                className="card-img-top"
-                alt={service.title}
-                style={{ height: "220px", objectFit: "cover" }}
-              />
-              <div className="card-body d-flex flex-column">
-                <h5 className="card-title">{service.title}</h5>
-                <p className="card-text">{service.desc}</p>
-                <h5 className="text-success">₹{service.price}</h5>
-                <button
-                  className="btn btn-primary mt-auto"
-                  onClick={() => navigate("/booking",{
-                    state:{
-                      service:service.title,
-                      price:service.price,
-                    },
-                  })
-                  }>
-                  Book Now
-                </button>
-              </div>
+    <section className="services-catalog-section">
+      <div className="container py-5">
+        <div className="services-catalog-heading text-center mt-5">
+          <span className="services-catalog-label">
+            <i className="bi bi-stars"></i> CLEANING SOLUTIONS
+          </span>
+
+          <h1>
+            Our Cleaning <span>Services</span>
+          </h1>
+
+          <p>
+            Explore our range of cleaning services and choose the right
+            solution for your space.
+          </p>
+        </div>
+
+        <div className="row g-4 mt-4">
+          {services.map((service) => (
+            <div
+              className="col-sm-6 col-lg-4"
+              key={service.title}
+            >
+              <article className="catalog-service-card h-100">
+                <div className="catalog-service-image-wrapper">
+                  <img
+                    src={service.image}
+                    className="catalog-service-image"
+                    alt={service.title}
+                    loading="lazy"
+                  />
+
+                  <span className="catalog-service-icon">
+                    <i className={`bi ${service.icon}`}></i>
+                  </span>
+                </div>
+
+                <div className="catalog-service-body">
+                  <h2>{service.title}</h2>
+
+                  <p>{service.desc}</p>
+
+                  <div className="catalog-service-footer">
+                    <div>
+                      <small>Starting from</small>
+                      <h3>₹{service.price}</h3>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="catalog-book-btn"
+                      onClick={() =>
+                        navigate("/booking", {
+                          state: {
+                            service: service.title,
+                            price: service.price,
+                          },
+                        })
+                      }
+                    >
+                      Book Now <i className="bi bi-arrow-right"></i>
+                    </button>
+                  </div>
+                </div>
+              </article>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default ServicesCard;
+

@@ -3,26 +3,31 @@ import Steps from "./Steps";
 
 function Section4() {
   return (
-    <div className="container text-center section-4">
-      <div className="d-flex justify-content-center align-items-center gap-2 mb-4">
-        <div>
-          <i className="bi bi-star"></i>
-        </div>
-        <small className="fw-bold text-uppercase">how it work</small>
-      </div>
-      <h1 className="main-title mb-3 backgraund p-4">
-        Get Cleaner{" "}
-        <span>
-          Space In
-          <br></br>Four{" "}
-        </span>
-        Steps
-      </h1>
+    <section className="how-it-works-section">
+      <div className="container py-5">
+        <div className="how-heading text-center">
+          <span className="how-label">
+            <i className="bi bi-stars"></i> HOW IT WORKS
+          </span>
 
-      <div className="steps">
-        <Steps />
+          <h2>
+            Book Your Cleaning
+            <br />
+            <span>In Four Simple Steps</span>
+          </h2>
+
+          <p>
+            Getting started is easy. Follow these simple steps to arrange
+            your cleaning service.
+          </p>
+        </div>
+
+        <div className="mt-5">
+          <Steps />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
+
 export default Section4;

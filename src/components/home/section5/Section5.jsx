@@ -1,59 +1,101 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Section5() {
-  return (
-    <div className="mt-5 p-5">
-      <div className="row">
-        <div className=" col-md-6 ">
-          <img
-            src="https://i.pinimg.com/1200x/df/f8/fd/dff8fd81708903bc3f2fd844333405eb.jpg"
-            className="img-fluid rounded-4"
-          />
-        </div>
+  const benefits = [
+    {
+      icon: "bi-calendar-check",
+      title: "Convenient Booking",
+      description:
+        "Choose your preferred cleaning service and schedule your booking with ease.",
+    },
+    {
+      icon: "bi-stars",
+      title: "Cleaning for Every Space",
+      description:
+        "Explore cleaning options for homes, offices, bathrooms, water tanks, and gardens.",
+    },
+    {
+      icon: "bi-wallet2",
+      title: "Clear Service Pricing",
+      description:
+        "View the listed starting price for each service before proceeding with your booking.",
+    },
+  ];
 
-        <div className="col-sm-5 col-md-6 ">
-          <div className="d-flex align-items-center gap-2 section5">
-            <div>
-              <i className="bi bi-star"></i>
+  return (
+    <section className="why-choose-section">
+      <div className="container py-5">
+        <div className="row align-items-center g-5">
+          {/* Left Side: Image */}
+          <div className="col-lg-6">
+            <div className="why-image-wrapper">
+              <img
+                src="https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg"
+                alt="Cleaning professional maintaining a clean space"
+                className="why-main-image"
+                loading="lazy"
+              />
+
+              <div className="why-image-card">
+                <div className="why-image-card-icon">
+                  <i className="bi bi-house-check"></i>
+                </div>
+                <div>
+                  <h6>Clean Spaces</h6>
+                  <p>A fresh start for your space</p>
+                </div>
+              </div>
             </div>
-            <small className="fw-bold text-uppercase">Why choosing us</small>
           </div>
 
-          <h6 className="main-title mb-3 section5 mt-5 backgraund p-4">
-            We Make
-            <span>
-              {" "}
-              Your Home<br></br> Sparkle
-            </span>{" "}
-            And Shine
-          </h6>
-          <p className="text-muted text-left section5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-            <br></br> officia iste non distinctio facilis itaque voluptate nemo
-            veniam labore voluptas dolores odio{" "}
-          </p>
+          {/* Right Side: Content */}
+          <div className="col-lg-6">
+            <div className="why-content">
+              <span className="why-label">
+                <i className="bi bi-stars"></i>
+                WHY CHOOSE CLEANEXPERT
+              </span>
 
-          <div className="section5">
-            <div className="mt-4">
-              <h4>100% Satisfaction</h4>
-              <p className="text-muted">
-                Cleaning services ecompass a wide range of tasks related
-                <br></br>
-                to the installation,repair,and maintenance
+              <h2 className="why-title">
+                We Make Your Space
+                <br />
+                <span>Fresh & Comfortable</span>
+              </h2>
+
+              <p className="why-description">
+                Finding the right cleaning service should be simple.
+                CleanExpert brings different cleaning options together
+                so you can explore services, check starting prices, and
+                book according to your needs.
               </p>
-            </div>
-            <div className="mt-4">
-              <h4>Eco-Friendly Cleaning Products</h4>
-              <p className="text-muted">
-                cleaning services ecompass a wide range of tasks related
-                <br></br>
-                to the installation,repair,and maintenance
-              </p>
+
+              <div className="why-benefits">
+                {benefits.map((benefit) => (
+                  <div className="why-benefit" key={benefit.title}>
+                    <div className="why-benefit-icon">
+                      <i className={`bi ${benefit.icon}`}></i>
+                    </div>
+
+                    <div>
+                      <h5>{benefit.title}</h5>
+                      <p>{benefit.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <Link to="/servicescard" className="why-cta-btn">
+                Explore Our Services
+                <i className="bi bi-arrow-right"></i>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
+
 export default Section5;
+

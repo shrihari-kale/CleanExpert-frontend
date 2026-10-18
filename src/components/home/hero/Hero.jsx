@@ -5,29 +5,50 @@ function Hero() {
   const navigate = useNavigate();
 
   return (
-    <div className="hero">
-      <div className="contain text-white hero-img">
-        <h1 className="display-4 fw-bold main-text">
-          Professional <br></br>
-          <span className="text-primary">Cleaning</span>
-          Services
-        </h1>
+    <section className="hero">
+      <div className="hero-overlay">
+        <div className="container hero-content">
+          <span className="hero-badge">
+            ✨ Trusted Cleaning Professionals
+          </span>
 
-        <p className="mt-3 main-text">
-          Professional cleaning services for homes and offices.
-        </p>
+          <h1>
+            A Cleaner Space,
+            <br />
+            <span> A Happier Place.</span>
+          </h1>
 
-        <button
-          className="btn btn-primary mt-3"
-          style={{ width: "10%", marginLeft: "30px" }}
-          onClick={() => navigate("/servicescard")}
-        >
-          Our Services
-        </button>
-        
+          <p>
+            Professional home and office cleaning services
+            designed to make your space fresh, clean, and comfortable.
+          </p>
+
+          <div className="hero-buttons">
+            <button
+              className="btn btn-primary hero-btn"
+              onClick={() => navigate("/servicescard")}
+            >
+              Explore Services →
+            </button>
+
+            <button
+              className="btn btn-outline-light hero-btn"
+              onClick={() => navigate("/contact")}
+            >
+              Contact Us
+            </button>
+          </div>
+
+          <div className="hero-trust">
+            <span>✓ Professional Team</span>
+            <span>✓ Quality Service</span>
+            <span>✓ Easy Booking</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default Hero;
+

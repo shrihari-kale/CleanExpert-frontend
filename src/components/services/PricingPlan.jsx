@@ -66,4 +66,4 @@ const PricingPlan = () => {
   );
 }
 
-export default PricingPlan
+export default PricingPlan;
