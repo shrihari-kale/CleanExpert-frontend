@@ -39,6 +39,7 @@ const handlePayment = async () => {
 const data = await response.json();
 
 if (!response.ok) {
+  console.log("backend payment error:",data);
   throw new Error(data.message || "Order creation failed");
 }
 

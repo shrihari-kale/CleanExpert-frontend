@@ -1,52 +1,101 @@
 import { useState } from "react";
+import {Link, useNavigate} from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const [formData, setFormData]= useState({
+    email:"",
+    password:"" 
+  ,
+});
 
-    console.log("Email:", email);
-    console.log("Password:", password);
-  };
+const [message, setMessage]= useState("");
+const [loading, setLoading] = useState(false);
 
-  return (
-    <div className="container mt-5">
-      <h2>Login</h2>
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]:e.target.value,
+  });
+};
 
-      <form onSubmit={handleLogin}>
+const handleSubmit = async(e)=>{
+  e.prevetDefault();
+  setMessage("");
+  setLoading(true);  
+  try{
+    const response = await fetch("http://localhost:3000/api/auth/login",
+      {
+        method:"POST",
+        headers:{
+          "content-Type":"application/json",
+        },
+        body:JSON.stringify(formData),
+      }
+    );
+    const data = await response.json();
+
+    if(!response.ok){
+      throw new Error(data.message || "Login failed");
+    }
+    // save token for subsequent authenticated requies.
+    sessionStorage.setItem("user",JSON.stringify(data.user));
+
+    navigate("/");
+  }catch(error){
+    setMessage(error.message || "Something went wrong");
+  } finally{
+    setLoading(false);
+  }
+};
+return (
+  <div className="container mt-5" style={{ maxWidth: "450px" }}>
+    <div className="card shadow p-4">
+      <h2 className="text-center mb-4">Login</h2>
+
+      <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label>Email</label>
+          <label className="form-label">Email</label>
           <input
+            className="form-control"
             type="email"
-            className="form-control"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
         </div>
-
         <div className="mb-3">
-          <label>Password</label>
+          <label className="form-label">Password</label>
           <input
-            type="password"
             className="form-control"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
             required
           />
         </div>
-
-        <button type="submit" className="btn btn-primary">
-          Login
+        {message && (
+          <div className="alert alert-danger" role="alert">
+            {message}
+          </div>
+        )}
+        <button
+          type="submit"
+          className="btn btn-primary w-100"
+          disabled={loading}
+        >
+          {loading ? "Logging in..." : "Login"}
         </button>
       </form>
+      <p className="text-center mt-3 mb-0">
+        Don't have an account ? <Link to="/signup">Sign Up</Link>
+      </p>
     </div>
-  );
+  </div>
+);
 }
 
 export default Login;
-

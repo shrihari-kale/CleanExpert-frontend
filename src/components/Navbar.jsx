@@ -21,9 +21,11 @@ function Navbar() {
    },[]);
 
   return (
-    <nav className={`navbar navbar-expand-lg navbar-dark fixed-top w-100 ${
-      isHome?scrolled?"bg-dark shadow":"":"bg-dark shadow"
-     }`}>
+    <nav
+      className={`navbar navbar-expand-lg navbar-dark fixed-top w-100 ${
+        isHome ? (scrolled ? "bg-dark shadow" : "") : "bg-dark shadow"
+      }`}
+    >
       <div className="container">
         <Link
           className="navbar-brand fw-bold"
@@ -72,12 +74,19 @@ function Navbar() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/bookings">Booking</Link>
+              <Link className="nav-link" to="/bookings">
+                Booking
+              </Link>
             </li>
 
             <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
               <Link className="btn btn-outline-light" to="/login">
                 Login
+              </Link>
+            </li>
+            <li className="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <Link className="btn btn-outline-light" to="/signup">
+                Signup
               </Link>
             </li>
 

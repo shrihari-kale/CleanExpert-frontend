@@ -9,6 +9,7 @@ import BookingForm from "./components/BookingForm";
 import ViewBooking from "./components/ViewBooking";
 import PaymentPage from "./components/PaymentPage";
 import Login from "./components/pages/Login";
+import Signup from "./components/pages/Signup";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/booking" element={<BookingForm/>}></Route>
         <Route path="/bookings" element={<ViewBooking/>}/>
         <Route path="/payment" element={<PaymentPage/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
       </Routes>
 
       {/* <Footer/> */}

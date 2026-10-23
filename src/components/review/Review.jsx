@@ -86,26 +86,33 @@ function Review() {
             </p>
           </div>
         </section>
-        <div className="container-fluid  min-vh-100 py-5">
-          <div className="container p-5">
+        <section className="review-content">
+         <div className="container">
+          <div className="row g-5 align-item-start">
+            <div className="col-lg-5">
+            <div className="review-form-card">
+            <div className="review-from-icon">
+              <i className="bi bi-chat-squre-heart"></i>
+            </div>
             {/* Form */}
             <form onSubmit={handlesubmit}>
-              <div className="card p-4 shadow-lg border-0">
-                <h1 className="fw-bold mb-4 text-center">Customer Review</h1>
+              {/* <div className="card p-4 shadow-lg border-0"> */}
+                {/* <h1 className="fw-bold mb-4 text-center">Customer Review</h1> */}
 
                 <input
                   type="text"
-                  placeholder="Enter Customer Name"
-                  className="form-control mb-3"
+                  placeholder="Enter your Name"
+                  className="form-control review-input"
                   value={reviewData.name}
                   onChange={(e) =>
                     setReviewData({ ...reviewData, name: e.target.value })
                   }
                 />
-
+                
+                {/* <lable className="mt-5">Your Review</lable> */}
                 <textarea
                   placeholder="Write Review"
-                  className="form-control mb-3"
+                  className="form-control review-input mt-5"
                   rows="4"
                   value={reviewData.writeReview}
                   onChange={(e) =>
@@ -116,24 +123,36 @@ function Review() {
                   }
                 ></textarea>
 
-                <button className="btn btn-primary" type="submit">
+                <button className="review-submit-btn" type="submit">
                   Add Review
                 </button>
-              </div>
+              {/* </div> */}
             </form>
+            </div>
+            </div>
 
             {/* Review Section */}
-            <div className="mt-5">
-              <h2 className="fw-bold mb-4">
-                Customer Reviews <span>Total Review:{reviews.length}</span>
-              </h2>
+            <div className="col-lg-7">
+               <div className="review-list-heading">
+                  <div>
+                    <span className="review-section-lable">
+                      WHAT CUSTOMER SAY
+                    </span>
+                    <h2>Customer Reviews</h2>
+                  </div>
+
+                  <div className="review-count">
+                    <strong>{reviews.length}</strong>
+                    <span>Total Reviews</span>
+                  </div>
+               </div>
 
               <div className="row g-4">
                 {reviews.map((elem, idx) => {
                   return (
-                    <div key={idx} className="col-md-4">
-                      <div className="card shadow-lg border-0 h-100">
-                        <div className="card-body position-relative">
+                    <div key={idx} className="col-md-6">
+                      <div className="review-card h-100">
+                        <div className="review-card-top">
                           <span
                             onClick={() => {
                               deleteReview(idx);
@@ -143,23 +162,40 @@ function Review() {
                           >
                             {/* × */}
                           </span>
+                          <div className="review-avatar">
+                            {(elem.name || "c")
+                              .trim()
+                              .charAt(0)
+                              .toUpperCase()}
+                          </div>
+                          <div>
+                          <h3>{elem.name}</h3>
+                          <span>CleanExpert Customer</span>
+                           </div>
+                           </div>
 
-                          <h4 className="fw-bold">{elem.name}</h4>
+                           <div className="review-quote-icon">
+                              <i className="bi bi-quote"></i>
+                           </div>
 
-                          <p className="text-secondary mt-3">
+                          <p className="review-card-text">
                             {elem.writeReview}
                           </p>
-
-                          <h5 className="text-warning">⭐⭐⭐⭐⭐</h5>
+             
+                          <div className="review-card-footer">
+                            <i className="bi bi-heart-fill"></i>
+                            <span>Thank you for feedback</span>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    // </div>
                   );
                 })}
               </div>
             </div>
           </div>
         </div>
+        </section>
         <Footer />
       </main>
     </>
