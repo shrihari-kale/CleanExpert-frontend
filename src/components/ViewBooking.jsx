@@ -5,31 +5,46 @@ function ViewBooking() {
 const [bookings, setBookings] = useState([]);
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState("");
-
 useEffect(() => {
 const fetchBookings = async () => {
 try {
-const response = await fetch("http://localhost:3000/api/bookings");
-const data = await response.json();
+const token = sessionStorage.getItem("token");
 
 
-    if (!response.ok) {
-      throw new Error(data.message || "Failed to fetch bookings");
-    }
-
-    setBookings(Array.isArray(data.bookings) ? data.bookings : []);
-  } catch (err) {
-    console.error("Error fetching bookings:", err);
-    setError("Unable to load bookings. Please try again later.");
-  } finally {
-    setLoading(false);
+  if (!token) {
+    throw new Error("Please login to view your bookings.");
   }
+
+  const response = await fetch("http://localhost:3000/api/bookings", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
+    },
+  });
+
+  const data = await response.json();
+
+  console.log("Bookings API response:", data);
+
+  if (!response.ok) {
+    throw new Error(data.message || "Failed to fetch bookings");
+  }
+
+  setBookings(Array.isArray(data.bookings) ? data.bookings : []);
+  setError("");
+} catch (err) {
+  console.error("Error fetching bookings:", err);
+  setError(err.message || "Unable to load bookings.");
+} finally {
+  setLoading(false);
+}
+
 };
 
 fetchBookings();
-
-
 }, []);
+
 
 const getStatusClass = (status) => {
 switch ((status || "Pending").toLowerCase()) {

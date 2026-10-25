@@ -10,6 +10,7 @@ import ViewBooking from "./components/ViewBooking";
 import PaymentPage from "./components/PaymentPage";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/payment" element={<PaymentPage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
+        <Route path="/admin" element={<AdminDashboard/>}/>
       </Routes>
 
       {/* <Footer/> */}
