@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import whychoose from "../../../assets/whychoose.png";
 
 function Section5() {
 
@@ -27,14 +28,18 @@ function Section5() {
   ];
 
   return (
-    <section className="why-choose-section">
+    <section
+      className="why-choose-section"
+      data-aos="fade-up"
+      data-aos-duration="2500"
+    >
       <div className="container py-5">
         <div className="row align-items-center g-5">
           {/* Left Side: Image */}
           <div className="col-lg-6">
-            <div className="why-image-wrapper">
+            <div className="why-image-wrapper" data-aos="fade-right">
               <img
-                src="https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg"
+                src={whychoose}
                 alt="Cleaning professional maintaining a clean space"
                 className="why-main-image"
                 loading="lazy"
@@ -54,7 +59,11 @@ function Section5() {
 
           {/* Right Side: Content */}
           <div className="col-lg-6">
-            <div className="why-content">
+            <div
+              className="why-content"
+              fade-aos="fade-left"
+              data-aos-duration="2500"
+            >
               <span className="why-label">
                 <i className="bi bi-stars"></i>
                 WHY CHOOSE CLEANEXPERT

@@ -47,7 +47,11 @@ function ContactPage() {
       <div className="container py-lg-4">
         <div className="row align-items-stretch g-4">
           {/* Contact Form */}
-          <div className="col-lg-7">
+          <div
+            className="col-lg-7"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+          >
             <div className="contact-modern-card h-100">
               <span className="contact-modern-label">
                 <i className="bi bi-stars"></i>
@@ -229,7 +233,11 @@ function ContactPage() {
           </div>
 
           {/* Right Side */}
-          <div className="col-lg-5">
+          <div
+            className="col-lg-5"
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-bottom"
+          >
             <div className="contact-visual h-100">
               <img
                 src="https://i.pinimg.com/736x/ad/02/ac/ad02ac5c76eb582e3beeae2e50b453ba.jpg"

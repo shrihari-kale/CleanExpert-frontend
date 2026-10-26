@@ -1,4 +1,5 @@
 import React from "react";
+import aboutimg from "../../../assets/aboutimg.png";
 
 function About() {
   const features = [
@@ -24,7 +25,11 @@ function About() {
       <div className="container py-lg-5">
         <div className="row align-items-center g-5">
           {/* Left Content */}
-          <div className="col-lg-6">
+          <div
+            className="col-lg-6"
+            data-aos="fade-right"
+            data-aos-duration="1800"
+          >
             <div className="about-label mb-3">
               <i className="bi bi-stars"></i>
               <span>ABOUT CLEANEXPERT</span>
@@ -37,10 +42,10 @@ function About() {
             </h2>
 
             <p className="about-description mt-4">
-              At CleanExpert, we aim to make everyday cleaning simpler and
-              more convenient. From homes and offices to bathrooms, water
-              tanks, and gardens, explore cleaning services designed to help
-              keep your spaces clean and comfortable.
+              At CleanExpert, we aim to make everyday cleaning simpler and more
+              convenient. From homes and offices to bathrooms, water tanks, and
+              gardens, explore cleaning services designed to help keep your
+              spaces clean and comfortable.
             </p>
 
             <div className="about-features mt-4">
@@ -61,9 +66,13 @@ function About() {
 
           {/* Right Image */}
           <div className="col-lg-6">
-            <div className="about-image-wrapper">
+            <div
+              className="about-image-wrapper"
+              data-aos="fade-left"
+              data-aos-duration="1800"
+            >
               <img
-                src="https://images.pexels.com/photos/6195130/pexels-photo-6195130.jpeg"
+                src={aboutimg}
                 alt="Professional cleaning service"
                 className="about-main-image"
                 loading="lazy"

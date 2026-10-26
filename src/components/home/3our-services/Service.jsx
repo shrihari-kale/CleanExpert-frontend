@@ -5,7 +5,11 @@ function Service() {
   return (
     <section className="services py-5">
       <div className="container">
-        <div className="services-heading text-center">
+        <div
+          className="services-heading text-center"
+          data-aos="fade-down"
+          data-aos-duration="3000"
+        >
           <span className="services-label">
             <i className="bi bi-stars"></i> OUR SERVICES
           </span>
@@ -17,8 +21,8 @@ function Service() {
           </h2>
 
           <p className="services-description">
-            From everyday home cleaning to specialized cleaning solutions,
-            find the right service for your space.
+            From everyday home cleaning to specialized cleaning solutions, find
+            the right service for your space.
           </p>
         </div>
 

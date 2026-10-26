@@ -6,10 +6,21 @@ import ServicePage from './3our-services/ServicePage';
 import Section4 from "./4How_it_work/Section4";
 import Section5 from "./5Why_choose/Section5";
 import ContactPage from './6contact-page/ContactPage';
-// import { NewsLetter } from './newslatter/NewsLetter';
 import Footer from '../Footer';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 const MainHome = () => {
+  useEffect(() => {
+    AOS.init({
+      duration:800,
+      once:true,
+      offset:100,
+      easing:"ease-in-out",
+    });
+  },[]);
+
   return (
     <div>
       <Hero />

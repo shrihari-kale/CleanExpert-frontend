@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../Navbar";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Hero() {
   const navigate = useNavigate();
@@ -10,7 +12,8 @@ function Hero() {
       <Navbar />
       <section className="hero">
         <div className="hero-overlay">
-          <div className="container hero-content">
+          <div className="container hero-content" data-aos="fade-right"
+              data-aos-offset="400" data-aos-easing="ease-in-sine" data-aos-duration="1800">
             <span className="hero-badge">
               ✨ Trusted Cleaning Professionals
             </span>

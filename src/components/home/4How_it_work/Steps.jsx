@@ -31,7 +31,7 @@ const steps = [
 function Steps() {
   return (
     <div className="container">
-      <div className="row g-4">
+      <div className="row g-4" data-aos="fade-up" data-aos-duration="3000">
         {steps.map((step) => (
           <div className="col-sm-6 col-lg-3" key={step.id}>
             <div className="how-step-card h-100">

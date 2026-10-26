@@ -1,9 +1,6 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 
-function Login() {
-const navigate = useNavigate();
-
+function Login({ onClose, onSwitchToSignup }) {
 const [formData, setFormData] = useState({
 email: "",
 password: "",
@@ -24,6 +21,7 @@ e.preventDefault();
 setMessage("");
 setLoading(true);
 
+
 try {
   const response = await fetch(
     "http://localhost:3000/api/auth/login",
@@ -42,15 +40,15 @@ try {
     throw new Error(data.message || "Login failed");
   }
 
-  // Save JWT token and user details
   sessionStorage.setItem("token", data.token);
   sessionStorage.setItem("user", JSON.stringify(data.user));
 
-  // Redirect based on user role
+  onClose();
+
   if (data.user.role === "admin") {
-    navigate("/admin");
+    window.location.href = "/admin";
   } else {
-    navigate("/");
+    window.location.href = "/";
   }
 } catch (error) {
   setMessage(error.message || "Something went wrong");
@@ -62,8 +60,21 @@ try {
 };
 
 return (
-<div className="container mt-5" style={{ maxWidth: "450px" }}> <div className="card shadow p-4"> <h2 className="text-center mb-4">Login</h2>
+  
+  <div className="auth-overlay" onClick={onClose}>
+<div
+className="auth-modal"
+onClick={(e) => e.stopPropagation()}
+> <button
+       type="button"
+       className="auth-close"
+       onClick={onClose}
+       aria-label="Close login"
+     >
+× </button>
 
+
+    <h2 className="text-center mb-4">Login</h2>
 
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
@@ -106,7 +117,14 @@ return (
     </form>
 
     <p className="text-center mt-3 mb-0">
-      Don't have an account? <Link to="/signup">Sign Up</Link>
+      Don't have an account?{" "}
+      <button
+        type="button"
+        className="auth-link"
+        onClick={onSwitchToSignup}
+      >
+        Sign Up
+      </button>
     </p>
   </div>
 </div>
