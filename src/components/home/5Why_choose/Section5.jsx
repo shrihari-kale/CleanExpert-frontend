@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Section5() {
+
+  const navigate = useNavigate();
+
   const benefits = [
     {
       icon: "bi-calendar-check",
@@ -64,10 +67,10 @@ function Section5() {
               </h2>
 
               <p className="why-description">
-                Finding the right cleaning service should be simple.
-                CleanExpert brings different cleaning options together
-                so you can explore services, check starting prices, and
-                book according to your needs.
+                Finding the right cleaning service should be simple. CleanExpert
+                brings different cleaning options together so you can explore
+                services, check starting prices, and book according to your
+                needs.
               </p>
 
               <div className="why-benefits">
@@ -85,10 +88,13 @@ function Section5() {
                 ))}
               </div>
 
-              <Link to="/servicescard" className="why-cta-btn">
+              <button
+                onClick={() => navigate("/services")}
+                className="why-cta-btn"
+              >
                 Explore Our Services
                 <i className="bi bi-arrow-right"></i>
-              </Link>
+              </button>
             </div>
           </div>
         </div>

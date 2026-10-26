@@ -1,11 +1,11 @@
 import React from 'react'
-import Hero from './hero/Hero';
-import About from './Section1/About';
-import ServicePage from './service/ServicePage';
+import Hero from './1_hero/Hero';
+import About from './2About_Section/About';
+import ServicePage from './3our-services/ServicePage';
 // import Section3 from './section3/Section3';
-import Section4 from "./section4/Section4";
-import Section5 from "./section5/Section5";
-import ContactPage from './contact-page/ContactPage';
+import Section4 from "./4How_it_work/Section4";
+import Section5 from "./5Why_choose/Section5";
+import ContactPage from './6contact-page/ContactPage';
 // import { NewsLetter } from './newslatter/NewsLetter';
 import Footer from '../Footer';
 

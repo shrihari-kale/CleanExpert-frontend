@@ -92,8 +92,8 @@ return Number.isNaN(parsed.getTime())
 };
 
 return (
-<> <Navbar />
-
+<> 
+<Navbar/>
   <main className="my-bookings-page">
     <section className="my-bookings-hero">
       <div className="container">
