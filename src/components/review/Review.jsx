@@ -13,7 +13,9 @@ function Review() {
   // get api call
   const fetchReviews = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/review");
+      const response = await fetch(
+        "https://cleanexpert-backend-1.onrender.com/api/review",
+      );
       const data = await response.json();
 
       if (!response.ok) {
@@ -33,13 +35,16 @@ function Review() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/review", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://cleanexpert-backend-1.onrender.com/api/review",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(reviewData),
         },
-        body: JSON.stringify(reviewData),
-      });
+      );
       const data = await response.json();
 
       if (!response.ok) {

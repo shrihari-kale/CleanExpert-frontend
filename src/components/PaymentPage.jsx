@@ -26,7 +26,7 @@ if (!booking || price == null) {
 try {
   // Step 1: Create Razorpay order
   const response = await fetch(
-    "http://localhost:3000/api/payment/create-order",
+    "https://cleanexpert-backend-1.onrender.com/api/payment/create-order",
     {
       method: "POST",
       headers: {
@@ -37,7 +37,7 @@ try {
         ...booking,
         amount: price,
       }),
-    }
+    },
   );
 
   const data = await response.json();
@@ -82,7 +82,7 @@ try {
       try {
         // Step 4: Verify payment on backend
         const verifyResponse = await fetch(
-          "http://localhost:3000/api/payment/verify-payment",
+          "https://cleanexpert-backend-1.onrender.com/api/payment/verify-payment",
           {
             method: "POST",
             headers: {
@@ -90,14 +90,11 @@ try {
               Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
-              razorpay_order_id:
-                paymentResponse.razorpay_order_id,
-              razorpay_payment_id:
-                paymentResponse.razorpay_payment_id,
-              razorpay_signature:
-                paymentResponse.razorpay_signature,
+              razorpay_order_id: paymentResponse.razorpay_order_id,
+              razorpay_payment_id: paymentResponse.razorpay_payment_id,
+              razorpay_signature: paymentResponse.razorpay_signature,
             }),
-          }
+          },
         );
 
         const verifyData = await verifyResponse.json();

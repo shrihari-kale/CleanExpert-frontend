@@ -15,13 +15,16 @@ const token = sessionStorage.getItem("token");
     throw new Error("Please login to view your bookings.");
   }
 
-  const response = await fetch("http://localhost:3000/api/bookings", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
+  const response = await fetch(
+    "https://cleanexpert-backend-1.onrender.com/api/bookings",
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   const data = await response.json();
 
