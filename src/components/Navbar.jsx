@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 
 function Navbar() {
@@ -73,10 +74,10 @@ return (
     )}
 
     {authPopup === "signup" && (
-      <signup
+      <Signup
         onClose={() => setAuthPopup(null)}
-        onSwitchToSignup={() => setAuthPopup("login")}
-      ></signup>
+        onSwitchToLogin={() => setAuthPopup("login")}
+      ></Signup>
     )}
 
     <div className="container">
